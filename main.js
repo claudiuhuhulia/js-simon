@@ -16,6 +16,12 @@ function GetRandomNum(){
     return RandomArray;
 }
 
+function vanish(){
+    RandomArrayElement.classList.add('d-none');
+}
+
+
+
 RandomNumArray = GetRandomNum();
 console.log(RandomNumArray);
 
@@ -25,6 +31,8 @@ for(i = 0 ; i < 5 ; i++){
 }
 
  RandomArrayElement.innerHTML= string; 
+
+ setTimeout(vanish, 30000); 
 
 
 
