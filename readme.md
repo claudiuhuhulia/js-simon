@@ -11,3 +11,4 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
     - Utilizzando un **Ciclo for** inserisco gli elementi dell'array precedentemente creata nel DOM.
     - Creo una function che aggiunga la classe '*d-none*' all'elemento del DOM.
     - Creo un **setTimout** nella quale inserirò la funtion precedentemente creata.
+    - Creo una function che chieda all'utente i numeri che si ricorda.
