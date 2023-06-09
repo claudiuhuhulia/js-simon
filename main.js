@@ -1,8 +1,9 @@
+const RandomArrayElement = document.getElementById('randomarray');
+
 let RandomNumArray=[];
 
 function GetRandomNum(){
     let RandomArray=[];
-
     while(RandomArray.length < 5){
         let RandomNum;
     do{
@@ -12,9 +13,18 @@ function GetRandomNum(){
 
     RandomArray.push(RandomNum);
     }
-
     return RandomArray;
 }
 
 RandomNumArray = GetRandomNum();
 console.log(RandomNumArray);
+
+let string = '';
+for(i = 0 ; i < 5 ; i++){
+    string += `<div class='px-3'> ${RandomNumArray[i]}</div>`
+}
+
+ RandomArrayElement.innerHTML= string; 
+
+
+

@@ -7,3 +7,5 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 - Creo una function che mi generi un array di 5 numeri casuali diversi tra loro.
     - Dichiaro la costante array vuota.
     - Utilizzo un **While** per generare 5 numeri casuali, controllo che siano diversi usando il **Do while**.
+- Dichiaro una stringa vuota.
+    - Utilizzando un **Ciclo for** inserisco gli elementi dell'array precedentemente creata nel DOM.
