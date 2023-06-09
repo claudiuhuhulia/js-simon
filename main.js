@@ -1,8 +1,11 @@
 const RandomArrayElement = document.getElementById('randomarray');
+const CountdownElement = document.getElementById('countdown');
 
 let RandomNumArray=[];
 let UserNumbArray=[];
-let i = 0;
+let includes = 0;
+let userarray=[]; 
+let CountDown = 10;
 
 function GetRandomNum(){
     let RandomArray=[];
@@ -21,24 +24,17 @@ function GetRandomNum(){
 function vanish(){
     RandomArrayElement.classList.add('d-none');
 }
-let userarray=[];
+
 function Promts(){
-    let userNumb;
     for(i = 0 ; i < 5 ; i++){
-        userNumb = parseInt(prompt(`Digita il ${i + 1} numero che hai visto`));
-        userarray += userNumb;
+        let userNumb = parseInt(prompt(`Digita il ${i + 1}° numero che hai visto`));
+        userarray.push(userNumb);
     }
     return userarray;
 }
 UserNumbArray= userarray;
 
 
-
-if(RandomNumArray.includes(UserNumbArray)){
-i++;
-
-}
-console.log(i);
 
 RandomNumArray = GetRandomNum();
 console.log(RandomNumArray);
@@ -50,7 +46,25 @@ for(i = 0 ; i < 5 ; i++){
 
  RandomArrayElement.innerHTML= string; 
 
-    setTimeout(vanish, 10000); 
-    setTimeout(Promts, 5000); 
+setTimeout(vanish, 10000); 
+setTimeout(() => {
+        UserNumbArray = Promts();
+        console.log(UserNumbArray);
+        
+    for (i = 0; i < 5; i++) {
+    if (RandomNumArray.includes(UserNumbArray[i])) {
+      includes++;
+    }
+    }
+        console.log(includes);
+      alert(`HAI INDOVINATO ${includes} NUMERI SU 5`);
+}, 11000);
 
-    console.log(UserNumbArray);
+const count = setInterval(() => {
+        CountdownElement.innerText= --CountDown;
+        if(CountDown === 0){
+            CountdownElement.innerText= '';
+            clearInterval(count);
+        }
+}, 1000);
+
